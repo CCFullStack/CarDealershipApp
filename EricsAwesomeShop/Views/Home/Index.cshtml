@@ -1,0 +1,33 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html ng-app="EricsAwesomeShop">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/angular-route.min.js"></script>
+    <script src="~/Scripts/angular-resource.min.js"></script>
+    <script src="~/angular/scripts/app.js"></script>
+    <script>
+        // inject stuff from C# here
+        angular
+            .module('EricsAwesomeShop')
+            .constant('routeUrls', {
+                carApi: '@Url.HttpRouteUrl("CarApi", null)'
+            });
+    </script>
+    <script src="~/angular/scripts/carService.js"></script>
+    <script src="~/angular/scripts/adminController.js"></script>
+    <script src="~/angular/scripts/homeController.js"></script>
+    <script src="~/angular/scripts/loginController.js"></script>
+</head>
+<body>
+    <div class="container">
+        <ng-view></ng-view>
+    </div>
+</body>
+</html>
